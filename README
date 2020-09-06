@@ -1,3 +1,40 @@
+Epson EPL-5x00L/EPL-6x00L Printer Driver
+========================================
+
+The easiest way to print under Linux is to use a PostScript able printer, which
+is ideally supported by its manufacturer.
+
+But since I've got an EPSON EPL-6100L with plenty of toner (5000 pages
+capacity), I would like to use it first.
+
+This repository is a clone of an older Sourceforge / CVS project
+https://sourceforge.net/projects/epsonepl/
+
+Installation instructions Ubuntu 20.04
+======================================
+
+Tested for Ubuntu 20.04, but it could work for other distributions too.
+Tested with EPSON EPL-6100L, but it should work for the similar models (ending with `L`) too.
+Works as of September 2020.
+
+First compile the driver and install driver and printer description to your system:
+
+```
+git clone <this-repo>
+./configure --prefix='/usr'
+make
+sudo make install
+```
+
+Now select "Printing" in your Linux settings, "Add Printer" and once you
+offered a choice, select "Provide PPD file", then point to a .ppd for your
+model in the foomatic_PPDs/ subfolder of this repository. The .ppd file relies
+on the binary you've compiled and installed to /usr/bin in the previous step.
+
+Print some example document or a test page - works!
+
+- - -
+
 What is this?
 ===========
   This project is named "epsonepl".

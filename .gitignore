@@ -1,0 +1,5 @@
+*.o
+Makefile
+config.status
+ijs-config
+ijs_server_epsonepl
